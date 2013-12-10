@@ -31,7 +31,6 @@ SD <- function(x) sqrt(VAR(x))
 #' This is often called the z score.
 #'
 #' @param x a random variable
-#' @export
 #' @examples
 #' dice <- rv(1:6)
 #' (zdice <- Z(dice))
