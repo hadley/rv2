@@ -28,7 +28,7 @@ To ensure that all branches are synced with master, run:
 git checkout test-me && git rebase master
 git checkout delete-me && git rebase master
 git checkout check-me && git rebase master
-git push --force
+git push --all --force
 ```
 
 You can create zipped version of these packages with:
