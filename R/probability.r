@@ -10,6 +10,6 @@
 #' P(wheel > 10)
 #' P(wheel %% 2 == 0)
 P <- function(x) {
-  stopifnot(is.logical(x))
+  stopifnot(is.logical(x), is.rv(x))
   sum(probs(x)[x])
 }
