@@ -21,9 +21,6 @@ rv <- function(x, probs = NULL) {
   if (is.rv(x)) x <- as.numeric(x)
   if (is.null(probs)) {
     probs <- rep(1, length(x)) / length(x)
-  } else {
-    if (any(probs < 0)) stop("Probabilities must be positive")
-    if (abs(sum(probs) - 1) > 1e-6) stop("Probabilities must sum to 1")
   }
 
   # Simplify by summing probabilities with equal x's. Need to use
