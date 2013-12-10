@@ -20,7 +20,7 @@ E <- function(x) {
 
 #' @rdname moments
 #' @export
-VAR <- function(x) E((x - E(x)) ^ 2)
+VAR <- function(x) E((x - E(x) ^ 2))
 
 #' @rdname moments
 #' @export
