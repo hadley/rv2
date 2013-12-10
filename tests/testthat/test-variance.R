@@ -30,8 +30,3 @@ test_that("Var(a * x) = a^2 * Var(x)", {
   expect_equal(VAR(0 * dice), 0 * VAR(dice))
   expect_equal(VAR(dice), VAR(-1 * dice))
 })
-
-test_that("variance throws error if input not an rv", {
-  expect_error(VAR(5), "must be an rv object")
-  expect_error(VAR("a"), "must be an rv object")
-})

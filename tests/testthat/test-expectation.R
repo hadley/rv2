@@ -21,8 +21,3 @@ test_that("expectation is multiplicatve", {
   expect_equal(E(-1 * dice), -1 * E(dice))
   expect_equal(E( 0 * dice),  0 * E(dice))
 })
-
-test_that("expectation throws error if input not an rv", {
-  expect_error(E(5), "must be an rv object")
-  expect_error(E("a"), "must be an rv object")
-})
