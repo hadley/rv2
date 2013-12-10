@@ -18,14 +18,25 @@ The master branch contains a complete version of the package that passes `R CMD 
 
 * `test-me`: a version with fewer tests and some bugs
 * `document-me`: a version with less documentation and some problems
+* `check-me`: a version with some problems that need fixing for R CMD check.
 
 Commits made to these branches need to be minimal and well described in the commmit message since they will be regularly rebased from master.
+
+To ensure that all branches are synced with master, run:
+
+```
+git checkout test-me && git rebase master
+git checkout delete-me && git rebase master
+git checkout check-me && git rebase master
+git push --force
+```
 
 You can create zipped version of these packages with:
 
 ```R
 git archive --format zip --output test-me.zip test-me 
 git archive --format zip --output document-me.zip document-me 
+git archive --format zip --output check-me.zip check-me 
 ```
 
 ## `package-me`
