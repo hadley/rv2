@@ -5,6 +5,6 @@ Author: Hadley Wickham <h.wickham@gmail.com>
 Maintainer: Hadley Wickham <h.wickham@gmail.com>
 Description: Inspired by Andreas Buja's code from
     \url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}
-License: MIT
+License: MIT + file LICENSE
 Suggests:
     testthat
