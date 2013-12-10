@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Compute the probability that an event occurs.\n#' \n#' @param x an event. An event is a special type of discrete random variable\n#'   that only has two outcomes: \\code{TRUE} or \\code{FALSE}.  It is usually\n#'   created by applying a comparison operator to a random variable.\n#' @return a probability between 0 and 1.\n#' @export\n#' @examples\n#' wheel <- rv(1:20)\n#' P(wheel > 10)\n#' P(wheel %% 2 == 0)\nP <- function(x) {\n  stopifnot(is.logical(x))\n  sum(probs(x)[x])\n}\n",
+    "created" : 1386684592570.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1229921475",
+    "id" : "D013C5E5",
+    "lastKnownWriteTime" : 1340328401,
+    "path" : "~/Documents/courses/13-devtools/code-data/rv/checked/R/probability.r",
+    "project_path" : "R/probability.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

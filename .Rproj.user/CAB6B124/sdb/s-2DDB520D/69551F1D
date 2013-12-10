@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: rv\nTitle: Discrete random variables\nVersion: 0.1\nAuthor: Hadley Wickham <h.wickham@gmail.com>\nMaintainer: Hadley Wickham <h.wickham@gmail.com>\nDescription: Inspired by Andreas Buja's code from\n    \\url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}\nLicense: MIT\nSuggests:\n    testthat\nCollate:\n    'moments.r'\n    'ops.r'\n    'plot.r'\n    'probability.r'\n    'rv.r'\n    'simulation.r'\n    'transform.r'\n",
+    "created" : 1386684527054.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1597950809",
+    "id" : "69551F1D",
+    "lastKnownWriteTime" : 1386684529,
+    "path" : "~/Documents/courses/13-devtools/code-data/rv/checked/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}

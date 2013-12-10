@@ -1,0 +1,18 @@
+Package: rv
+Title: Discrete random variables
+Version: 0.1
+Author: Hadley Wickham <h.wickham@gmail.com>
+Maintainer: Hadley Wickham <h.wickham@gmail.com>
+Description: Inspired by Andreas Buja's code from
+    \url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}
+License: MIT
+Suggests:
+    testthat
+Collate:
+    'moments.r'
+    'ops.r'
+    'plot.r'
+    'probability.r'
+    'rv.r'
+    'simulation.r'
+    'transform.r'

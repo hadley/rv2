@@ -1,0 +1,17 @@
+{
+    "contents" : "dice <- rv(1:6)\ndice\nplot(dice)\nP(dice > 3)\nE(dice)\nrsim(dice, 100)\n",
+    "created" : 1386684534367.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "111029373",
+    "id" : "D97429E3",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

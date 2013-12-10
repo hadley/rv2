@@ -1,0 +1,22 @@
+\name{rif}
+\alias{rif}
+\title{Random if.}
+\usage{
+  rif(x, yes, no)
+}
+\arguments{
+  \item{x}{an event (a random variable with logical
+  values)}
+
+  \item{yes}{number to return if event occurs}
+
+  \item{no}{number to return if event doesn't occur}
+}
+\description{
+  Random if.
+}
+\examples{
+dice <- rv(1:6)
+rif(dice > 3, -1, 5)
+}
+

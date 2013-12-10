@@ -1,0 +1,16 @@
+{
+    "contents" : "#' Simulate n random numbers from the rv\n#'\n#' @param x a random variable\n#' @param n number of simulations\n#' @export\n#' @examples\n#' coin <- rv(c(-1, 1))\n#' rsim(coin, 100)\n#' mean(rsim(coin, 100))\n#' mean(rsim(coin, 1000))\nrsim <- function(x, n) {\n  sample(x, n, prob = probs(x), replace = TRUE)\n}\n",
+    "created" : 1386684609299.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2397555774",
+    "id" : "A6B4971C",
+    "lastKnownWriteTime" : 1340328401,
+    "path" : "~/Documents/courses/13-devtools/code-data/rv/checked/R/simulation.r",
+    "project_path" : "R/simulation.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
