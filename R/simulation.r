@@ -1,4 +1,4 @@
-#' Simulate n random numbers from the rv
+#' Simulate n random numbers from an rv.
 #'
 #' @param x a random variable
 #' @param n number of simulations

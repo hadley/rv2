@@ -1,9 +1,9 @@
 #' Compute the probability that an event occurs.
 #' 
 #' @param x an event. An event is a special type of discrete random variable
-#'   that only has two outcomes: \code{TRUE} or \code{FALSE}.  It is usually
+#'   that only has two outcomes: \code{TRUE} or \code{FALSE}. It is usually
 #'   created by applying a comparison operator to a random variable.
-#' @return a probability between 0 and 1.
+#' @return a probability (numeric vector of length 1) between 0 and 1.
 #' @export
 #' @examples
 #' wheel <- rv(1:20)

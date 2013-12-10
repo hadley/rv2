@@ -12,7 +12,7 @@ VAR(x)
 SD(x)
 }
 \arguments{
-  \item{x}{random variable}
+  \item{x}{random variable to summarise}
 }
 \description{
 Compute the moments of a random variable.
@@ -22,5 +22,9 @@ dice <- rv(1:6)
 E(dice)
 VAR(dice)
 SD(dice)
+}
+\seealso{
+\code{\link{Z}} to standardise an rv by subtracting off
+mean and dividing by standard deviation
 }
 

@@ -1,6 +1,6 @@
 \name{rsim}
 \alias{rsim}
-\title{Simulate n random numbers from the rv}
+\title{Simulate n random numbers from an rv.}
 \usage{
 rsim(x, n)
 }
@@ -10,7 +10,7 @@ rsim(x, n)
   \item{n}{number of simulations}
 }
 \description{
-Simulate n random numbers from the rv
+Simulate n random numbers from an rv.
 }
 \examples{
 coin <- rv(c(-1, 1))

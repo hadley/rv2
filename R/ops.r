@@ -8,6 +8,10 @@
 #' @export
 "*.rv" <- function(e1, e2) combine(e1, e2, `*`)
 #' @export
+"%%.rv" <- function(e1, e2) combine(e1, e2, `%%`)
+#' @export
+"%/%.rv" <- function(e1, e2) combine(e1, e2, `%/%`)
+#' @export
 "/.rv" <- function(e1, e2) combine(e1, e2, `/`)
 #' @export
 "^.rv" <- function(e1, e2) combine(e1, e2, `^`)

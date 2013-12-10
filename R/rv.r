@@ -1,6 +1,6 @@
 #' Make a discrete random variable.
 #' 
-#' @param x a numeric vector giving the values of the random vairable.
+#' @param x a numeric vector giving the values of the random variable.
 #' @param probs optional, a numeric vector giving the probabilities 
 #'   corresponding to each x value. If not specific, assumes all outcomes
 #'   are equally likely
@@ -21,6 +21,7 @@ rv <- function(x, probs = NULL) {
   x_new <- as.vector(tapply(x, x, "[", 1))
   probs <- as.vector(tapply(probs, x, sum))
   
+  # Set probs and class attributes
   structure(x_new, probs = probs, class = "rv")
 }
 

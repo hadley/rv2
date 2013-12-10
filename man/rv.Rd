@@ -6,7 +6,7 @@ rv(x, probs = NULL)
 }
 \arguments{
   \item{x}{a numeric vector giving the values of the random
-  vairable.}
+  variable.}
 
   \item{probs}{optional, a numeric vector giving the
   probabilities corresponding to each x value. If not

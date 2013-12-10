@@ -1,4 +1,6 @@
 S3method("!=",rv)
+S3method("%%",rv)
+S3method("%/%",rv)
 S3method("&",rv)
 S3method("*",rv)
 S3method("+",rv)

@@ -1,7 +1,9 @@
 #' Compute the moments of a random variable.
 #'
 #' @name moments
-#' @param x random variable
+#' @param x random variable to summarise
+#' @seealso \code{\link{Z}} to standardise an rv by subtracting off mean
+#'   and dividing by standard deviation
 #' @examples
 #' dice <- rv(1:6)
 #' E(dice)
@@ -24,6 +26,7 @@ SD <- function(x) sqrt(VAR(x))
 #' Standardise by subtracting off expectation and dividing by sd.
 #' 
 #' This is often called the z score.
+#' 
 #' @param x a random variable
 #' @export
 #' @examples
@@ -32,4 +35,3 @@ SD <- function(x) sqrt(VAR(x))
 #' E(zdice)
 #' SD(zdice)
 Z <- function(x) (x - E(x)) / SD(x)
-
