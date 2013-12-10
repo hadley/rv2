@@ -1,4 +1,4 @@
-#' @S3method plot rv
+#' @export
 plot.rv <- function(x, ...) {
   name <- deparse(substitute(x))
   ylim <- range(0, probs(x))

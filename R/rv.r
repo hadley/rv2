@@ -39,7 +39,7 @@ is.rv <- function(x) inherits(x, "rv")
 
 probs <- function(x) attr(x, "probs")
 
-#' @S3method print rv
+#' @export
 print.rv <- function(x, ...) {
   X <- format(x, digits = 3)
   P <- format(probs(x), digits = 3)
@@ -48,12 +48,13 @@ print.rv <- function(x, ...) {
   print(out, quote = FALSE)
 }
 
-#' @S3method [ rv
+#' @export
 "[.rv" <- function(x, i, ...) {
   rv(as.numeric(x)[i], prop.table(probs(x)[i]))
 }
 
-#' @S3method Math rv
+#' @export
+#' @method Ops rv
 Math.rv <- function(x, ...) {
   rv(NextMethod(), probs(x))
 }

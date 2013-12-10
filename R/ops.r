@@ -1,4 +1,5 @@
-#' @S3method Ops rv
+#' @export
+#' @method Math rv
 Ops.rv <- function(e1, e2) {
   # Assume that two random variables are independent
   if (is.rv(e1) && is.rv(e2)) {
