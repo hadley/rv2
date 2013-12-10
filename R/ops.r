@@ -1,9 +1,39 @@
+# Would be better to implement this using the Ops group generic, but that
+# assumes a rather high level of S3 knowledge
+
 #' @export
-#' @method Math rv
-Ops.rv <- function(e1, e2) {
-  # Assume that two random variables are independent
+"+.rv" <- function(e1, e2) combine(e1, e2, `+`)
+#' @export
+"-.rv" <- function(e1, e2) combine(e1, e2, `-`)
+#' @export
+"*.rv" <- function(e1, e2) combine(e1, e2, `*`)
+#' @export
+"/.rv" <- function(e1, e2) combine(e1, e2, `/`)
+#' @export
+"^.rv" <- function(e1, e2) combine(e1, e2, `^`)
+#' @export
+"<.rv" <- function(e1, e2) combine(e1, e2, `<`)
+#' @export
+"<=.rv" <- function(e1, e2) combine(e1, e2, `<=`)
+#' @export
+">.rv" <- function(e1, e2) combine(e1, e2, `>`)
+#' @export
+">=.rv" <- function(e1, e2) combine(e1, e2, `>=`)
+#' @export
+"==.rv" <- function(e1, e2) combine(e1, e2, `==`)
+#' @export
+"!=.rv" <- function(e1, e2) combine(e1, e2, `!=`)
+#' @export
+"&.rv" <- function(e1, e2) combine(e1, e2, `&`)
+#' @export
+"|.rv" <- function(e1, e2) combine(e1, e2, `|`)
+
+# Combine two independent random variables, or a random variable and a numeric
+# with a vectorised function 
+combine <- function(e1, e2, f) {
   if (is.rv(e1) && is.rv(e2)) {
-    vals <- as.vector(outer(e1, e2, .Generic))
+    # Use outer to generate all pairwise combinations
+    vals <- as.vector(outer(e1, e2, f))
     probs <- as.vector(outer(probs(e1), probs(e2), "*"))
     return(rv(vals, probs))
   }
@@ -16,7 +46,8 @@ Ops.rv <- function(e1, e2) {
     rv <- e2
     n <- e1
   }
-  rv(NextMethod(), probs(rv))
+  
+  rv(f(as.numeric(rv), n), probs(rv))
 }
 
 

@@ -54,8 +54,21 @@ print.rv <- function(x, ...) {
 }
 
 #' @export
-#' @method Ops rv
-Math.rv <- function(x, ...) {
+abs.rv <- function(x) {
   rv(NextMethod(), probs(x))
 }
 
+#' @export
+log.rv <- function(x, base = exp(1)) {
+  rv(NextMethod(), probs(x))
+}
+
+#' @export
+exp.rv <- function(x) {
+  rv(NextMethod(), probs(x))
+}
+
+#' @export
+sqrt.rv <- function(x) {
+  rv(NextMethod(), probs(x))
+}
