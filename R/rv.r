@@ -20,9 +20,11 @@ rv <- function(x, probs = NULL) {
     if (sum(probs) != 1) stop("Probabilities must sum to 1")
   }
   
-  # Simplify by summing probabilities with equal x's
-  x_new <- as.vector(tapply(x, x, "[", 1))
-  probs <- as.vector(tapply(probs, x, sum))
+  # Simplify by summing probabilities with equal x's. Need to use 
+  # addNA since otherwise tapply silently drops groups with missing values
+  grp <- addNA(x, ifany = TRUE)
+  x_new <- as.vector(tapply(x, grp, "[", 1))
+  probs <- as.vector(tapply(probs, grp, sum))
   
   # Set probs and class attributes
   structure(x_new, probs = probs, class = "rv")
