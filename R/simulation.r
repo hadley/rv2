@@ -9,5 +9,6 @@
 #' mean(rsim(coin, 100))
 #' mean(rsim(coin, 1000))
 rsim <- function(x, n) {
-  sample(x, n, prob = probs(x), replace = TRUE)
+  stopifnot(is.rv(x))
+  sample(as.numeric(x), n, prob = probs(x), replace = TRUE)
 }

@@ -1,10 +1,11 @@
-#' Make a dscicrete random variable.
+#' Make a discrete random variable.
 #' 
-#' @param x a numberic vector giving the values of the random vairalbe.
+#' @param x a numeric vector giving the values of the random vairable.
 #' @param probs optional, a numeric vector giving the probabilities 
-#'   corresponding to each x value.  If not specific, assumes all outcomes
+#'   corresponding to each x value. If not specific, assumes all outcomes
 #'   are equally likely
 #' @export
+#' @return An S3 object of class rv.
 #' @examples
 #' dice <- rv(1:6)
 #' P(dice > 3)
@@ -16,16 +17,11 @@ rv <- function(x, probs = NULL) {
     probs <- rep(1, length(x)) / length(x)
   }  
   
-  ord <- order(x)
-  x <- x[ord]
-  probs <- probs[ord]
-  
   # Simplify by summing probabilities with equal x's
-  group <- cumsum(c(TRUE, x[-1] != x[-length(x)]))
-  x <- as.vector(tapply(x, group, "[", 1))
-  probs <- as.vector(tapply(probs, group, sum))
+  x_new <- as.vector(tapply(x, x, "[", 1))
+  probs <- as.vector(tapply(probs, x, sum))
   
-  structure(x, probs = probs, class = "rv")
+  structure(x_new, probs = probs, class = "rv")
 }
 
 #' Check if an object is a discrete random variable.
