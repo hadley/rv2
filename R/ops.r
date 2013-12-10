@@ -61,6 +61,7 @@ combine <- function(e1, e2, f) {
 #' dice <- rv(1:6)
 #' rif(dice > 3, -1, 5)
 rif <- function(x, yes, no) {
+  stopifnot(is.rv(x))
   stopifnot(is.numeric(yes), length(yes) == 1)
   stopifnot(is.numeric(no), length(no) == 1)
 

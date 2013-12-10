@@ -7,19 +7,29 @@
 #' E(dice)
 #' VAR(dice)
 #' SD(dice)
-#' SKEW(dice)
-#' SKEW(dice ^ 2)
 NULL
 
 #' @rdname moments
 #' @export
 E <- function(x) sum(as.numeric(x) * probs(x))
+
 #' @rdname moments
 #' @export
 VAR <- function(x) E((x - E(x)) ^ 2)
+
 #' @rdname moments
 #' @export
 SD <- function(x) sqrt(VAR(x))
-#' @rdname moments
+
+#' Standardise by subtracting off expectation and dividing by sd.
+#' 
+#' This is often called the z score.
+#' @param x a random variable
 #' @export
-SKEW <- function(x) E((x - E(x)) ^ 3) / SD(x) ^ 3
+#' @examples
+#' dice <- rv(1:6)
+#' (zdice <- Z(dice))
+#' E(zdice)
+#' SD(zdice)
+Z <- function(x) (x - E(x)) / SD(x)
+
