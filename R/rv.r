@@ -1,11 +1,11 @@
-#' Make a discrete random variable.
+#' Make a discrete random vaiable.
 #'
-#' @param x a numeric vector giving the values of the random variable.
-#' @param probs optional, a numeric vector giving the probabilities
+#' @param x a numberic vector giving the values of the random vaiable.
+#' @param probs optional, a numeric vector giving the proabilities
 #'   corresponding to each x value. If not specific, assumes all outcomes
 #'   are equally likely
 #' @export
-#' @return An S3 object of class rv.
+#' @return An S3 objct of class rv.
 #' @examples
 #' dice <- rv(1:6)
 #' P(dice > 3)
@@ -17,6 +17,7 @@
 #' coin == "H"
 #' # Game where you win $1 if you get a head, lose $1 if you get a tail
 #' rif(coin == "H", 1, -1)
+#' P(dice > dice + 1)
 rv <- function(x, probs = NULL) {
   if (is.rv(x)) x <- as.numeric(x)
   if (is.null(probs)) {
