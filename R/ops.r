@@ -32,6 +32,7 @@
 #' @export
 "|.rv" <- function(e1, e2) combine(e1, e2, `|`)
 
+
 # Combine two independent random variables, or a random variable and a numeric
 # with a vectorised function 
 combine <- function(e1, e2, f) {

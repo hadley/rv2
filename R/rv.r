@@ -15,7 +15,10 @@ rv <- function(x, probs = NULL) {
   if (is.rv(x)) x <- as.numeric(x)
   if (is.null(probs)) {
     probs <- rep(1, length(x)) / length(x)
-  }  
+  } else {
+    if (any(probs < 0)) stop("Probabilities must be positive")
+    if (sum(probs) != 1) stop("Probabilities must sum to 1")
+  }
   
   # Simplify by summing probabilities with equal x's
   x_new <- as.vector(tapply(x, x, "[", 1))
