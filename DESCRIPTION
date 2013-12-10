@@ -11,4 +11,6 @@ Depends:
 License: GPL-3
 LazyData: true
 Suggests:
-    testthat
+    testthat,
+    knitr
+VignetteBuilder: knitr

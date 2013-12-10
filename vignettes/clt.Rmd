@@ -1,0 +1,45 @@
+<!--
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{Exploring the central limit theorem}
+-->
+
+```{r, echo = FALSE}
+# echo = FALSE suppresses the output of this block
+library(rv2)
+```
+
+# The central limit theorem
+
+This vignette shows how we can see the central limit theorem emerge when we sum multiple discrete random variables together.
+
+We'll start by creating a helper function that adds together a random variable `n` times,  then divides by `n`
+
+```{r}
+mean_n <- function(x, n) {
+  out <- x
+  for (i in seq_len(n - 1)) {
+    out <- out + x
+  }
+  out / n
+}
+```
+
+Let look what happens to the average from rolling a die:
+
+```{r}
+dice <- rv(1:6)
+plot(dice)
+plot(mean_n(dice, 2))
+plot(mean_n(dice, 3))
+plot(mean_n(dice, 10))
+```
+
+Even if we have a highly non-normal distribution to start with, it still converges eventually:
+
+```{r}
+skewed <- rv(c(1, 10), c(0.9, 0.1))
+plot(skewed)
+plot(mean_n(skewed, 10))
+plot(mean_n(skewed, 50))
+plot(mean_n(skewed, 100))
+```
