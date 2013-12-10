@@ -1,0 +1,19 @@
+\name{as.rv}
+\alias{as.rv}
+\title{Coerce an object to an rv.}
+\usage{
+as.rv(x)
+}
+\arguments{
+  \item{x}{An object to coerce}
+}
+\description{
+Currently has methods for rv objects (which leaves
+unchanged), and for integer, numeric and logical vectors
+(which assume are uniformly distributed).
+}
+\examples{
+as.rv(1:10)
+as.rv(rv(c(1, 1, 2, 3)))
+}
+

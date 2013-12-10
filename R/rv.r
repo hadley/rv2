@@ -37,6 +37,30 @@ rv <- function(x, probs = NULL) {
 #' is.rv(rv(1:10))
 is.rv <- function(x) inherits(x, "rv")
 
+#' Coerce an object to an rv.
+#' 
+#' Currently has methods for rv objects (which leaves unchanged), and 
+#' for integer, numeric and logical vectors (which assume are uniformly
+#' distributed).
+#' 
+#' @export
+#' @param x An object to coerce
+#' @examples
+#' as.rv(1:10)
+#' as.rv(rv(c(1, 1, 2, 3)))
+as.rv <- function(x) UseMethod("as.rv")
+
+#' @export
+as.rv.rv <- function(x) x
+
+#' @export
+as.rv.numeric <- function(x) rv(x)
+#' @export
+as.rv.integer <- function(x) rv(x)
+#' @export
+as.rv.logical <- function(x) rv(x)
+
+
 probs <- function(x) attr(x, "probs")
 
 #' @export

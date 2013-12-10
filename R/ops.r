@@ -1,5 +1,18 @@
-# Would be better to implement this using the Ops group generic, but that
-# assumes a rather high level of S3 knowledge
+# Combine two independent random variables (including the special case
+# of a random variable and a number). We basically generate the complete 
+# two way table, and then collapse down to a random variable
+combine <- function(e1, e2, fun) {
+  e1 <- as.rv(e1)
+  e2 <- as.rv(e2)
+  
+  # Use outer to generate all pairwise combinations, combining using fun
+  vals <- outer(e1, e2, fun)
+  # Probabilities get multipled together
+  probs <- outer(probs(e1), probs(e2), "*")
+  
+  # Rely on rv to collapse any duplicates
+  rv(as.vector(vals), as.vector(probs))
+}
 
 #' @export
 "+.rv" <- function(e1, e2) combine(e1, e2, `+`)
@@ -31,29 +44,6 @@
 "&.rv" <- function(e1, e2) combine(e1, e2, `&`)
 #' @export
 "|.rv" <- function(e1, e2) combine(e1, e2, `|`)
-
-
-# Combine two independent random variables, or a random variable and a numeric
-# with a vectorised function 
-combine <- function(e1, e2, f) {
-  if (is.rv(e1) && is.rv(e2)) {
-    # Use outer to generate all pairwise combinations
-    vals <- as.vector(outer(e1, e2, f))
-    probs <- as.vector(outer(probs(e1), probs(e2), "*"))
-    return(rv(vals, probs))
-  }
-  
-  # Figure out which one is the rv, and which one is the number
-  if (is.rv(e1)) {
-    rv <- e1
-    n <- e2
-  } else {
-    rv <- e2
-    n <- e1
-  }
-  
-  rv(f(as.numeric(rv), n), probs(rv))
-}
 
 
 #' Random if.
