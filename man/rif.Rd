@@ -2,7 +2,7 @@
 \alias{rif}
 \title{Random if.}
 \usage{
-  rif(x, yes, no)
+rif(x, yes, no)
 }
 \arguments{
   \item{x}{an event (a random variable with logical
@@ -13,7 +13,7 @@
   \item{no}{number to return if event doesn't occur}
 }
 \description{
-  Random if.
+Random if.
 }
 \examples{
 dice <- rv(1:6)

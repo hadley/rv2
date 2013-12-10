@@ -8,11 +8,3 @@ Description: Inspired by Andreas Buja's code from
 License: MIT
 Suggests:
     testthat
-Collate:
-    'moments.r'
-    'ops.r'
-    'plot.r'
-    'probability.r'
-    'rv.r'
-    'simulation.r'
-    'transform.r'

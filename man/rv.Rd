@@ -2,7 +2,7 @@
 \alias{rv}
 \title{Make a dscicrete random variable.}
 \usage{
-  rv(x, probs = NULL)
+rv(x, probs = NULL)
 }
 \arguments{
   \item{x}{a numberic vector giving the values of the
@@ -13,7 +13,7 @@
   specific, assumes all outcomes are equally likely}
 }
 \description{
-  Make a dscicrete random variable.
+Make a dscicrete random variable.
 }
 \examples{
 dice <- rv(1:6)
