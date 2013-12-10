@@ -1,10 +1,14 @@
 Package: rv2
 Title: Discrete random variables
-Version: 0.1
-Author: Hadley Wickham <h.wickham@gmail.com>
-Maintainer: Hadley Wickham <h.wickham@gmail.com>
-Description: Inspired by Andreas Buja's code from
+Description: A simple object system for interactive exploration of discrete
+    random variables. Methods include P, E, Var, and plot. Inspired by Andreas
+    Buja's code from
     \url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}
-License: MIT + file LICENSE
+Version: 0.1
+Authors@R: 'Hadley Wickham <h.wickham@gmail.com> [aut,cre]'
+Depends:
+    R (>= 3.0.2)
+License: GPL-3
+LazyData: true
 Suggests:
     testthat
