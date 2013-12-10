@@ -17,7 +17,7 @@ rv <- function(x, probs = NULL) {
     probs <- rep(1, length(x)) / length(x)
   } else {
     if (any(probs < 0)) stop("Probabilities must be positive")
-    if (sum(probs) != 1) stop("Probabilities must sum to 1")
+    if ((sum(probs) - 1) > 1e-6) stop("Probabilities must sum to 1")
   }
   
   # Simplify by summing probabilities with equal x's. Need to use 
@@ -105,7 +105,7 @@ plot.rv <- function(x, ...) {
   ylim <- range(0, probs(x))
   
   plot(as.numeric(x), probs(x), type = "h", ylim = ylim,
-    xlab = name, ylab = paste0("P(", name, ")"))
+    xlab = name, ylab = paste0("P(", name, ")"), ...)
   points(as.numeric(x), probs(x), pch = 20)
   abline(h = 0, col = "gray")  
 }
