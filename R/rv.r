@@ -74,7 +74,7 @@ as.rv.character <- function(x) rv(x)
 probs <- function(x) attr(x, "probs")
 
 #' @export
-print.rv <- function(x, ...) {
+print.rv <- function(x) {
   X <- format(x, digits = 3)
   P <- format(probs(x), digits = 3)
   out <- cbind(X = X, "P(X)" = P)
