@@ -2,7 +2,7 @@
 #'
 #' @param x a random variable
 #' @param n number of simulations
-#' @export
+#  @export
 #' @examples
 #' coin <- rv(c(-1, 1))
 #' rsim(coin, 100)
