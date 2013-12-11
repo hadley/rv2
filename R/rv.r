@@ -5,7 +5,7 @@
 #'   corresponding to each x value. If not specific, assumes all outcomes
 #'   are equally likely
 #' @export
-#' @return An S3 object of class rv.
+#' @returns An S3 object of class rv.
 #' @examples
 #' dice <- rv(1:6)
 #' P(dice > 3)

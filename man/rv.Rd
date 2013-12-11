@@ -13,9 +13,6 @@ rv(x, probs = NULL)
 corresponding to each x value. If not specific, assumes all outcomes
 are equally likely}
 }
-\value{
-An S3 object of class rv.
-}
 \description{
 Make a discrete random variable.
 }
