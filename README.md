@@ -33,10 +33,18 @@ git push --all --force
 
 You can create zipped version of these packages with:
 
-```R
-git archive --format zip --output test-me.zip test-me 
-git archive --format zip --output document-me.zip document-me 
-git archive --format zip --output check-me.zip check-me 
+```
+git archive --format zip --prefix test-me/ --output ../day-2/test-me.zip test-me 
+git archive --format zip --prefix document-me/ --output ../day-2/document-me.zip document-me 
+git archive --format zip --prefix check-me/ --output ../day-2/check-me.zip check-me 
+cd ../day-2/
+unzip test-me.zip
+unzip document-me.zip
+unzip check-me.zip
+rm *.zip
+mv test-me/rv2.Rproj test-me/test-me.Rproj
+mv document-me/rv2.Rproj document-me/document-me.Rproj
+mv check-me/rv2.Rproj check-me/check-me.Rproj
 ```
 
 ## `package-me`
@@ -49,5 +57,6 @@ files <- lapply(paths, readLines, warn = FALSE)
 lines <- unlist(files)
 code <- lines[!grepl("^#'", lines)]
 code <- code[code != "NULL"]
-writeLines(code, "rv.R")
+dir.create("../day-2/package-me/")
+writeLines(code, "../day-2/package-me/rv.R")
 ```
