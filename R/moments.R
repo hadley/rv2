@@ -8,7 +8,7 @@
 #' dice <- rv(1:6)
 #' E(dice)
 #' VAR(dice)
-#' SD(dice)
+#' S(dice)
 NULL
 
 #' @rdname moments

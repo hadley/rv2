@@ -23,7 +23,7 @@ Compute the moments of a random variable.
 dice <- rv(1:6)
 E(dice)
 VAR(dice)
-SD(dice)
+S(dice)
 }
 \seealso{
 \code{\link{Z}} to standardise an rv by subtracting off mean
