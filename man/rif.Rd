@@ -9,9 +9,9 @@ rif(x, yes, no)
 \arguments{
 \item{x}{an event (a random variable with logical values)}
 
-\item{yes}{number to return if event occurs}
-
 \item{no}{number to return if event doesn't occur}
+
+\item{yess}{number to return if event occurs}
 }
 \description{
 Random if.

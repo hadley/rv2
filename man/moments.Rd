@@ -13,9 +13,6 @@ VAR(x)
 
 SD(x)
 }
-\arguments{
-\item{x}{random variable to summarise}
-}
 \description{
 Compute the moments of a random variable.
 }

@@ -1,7 +1,6 @@
 #' Compute the moments of a random variable.
 #'
 #' @name moments
-#' @param x random variable to summarise
 #' @seealso \code{\link{Z}} to standardise an rv by subtracting off mean
 #'   and dividing by standard deviation
 #' @examples
