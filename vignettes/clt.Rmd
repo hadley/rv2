@@ -46,4 +46,5 @@ plot(skewed)
 plot(mean_n(skewed, 10))
 plot(mean_n(skewed, 50))
 plot(mean_n(skewed, 100))
+stop("This is an easy one :)")
 ```
