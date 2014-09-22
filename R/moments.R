@@ -27,9 +27,9 @@ VAR <- function(x) E((x - E(x)) ^ 2)
 SD <- function(x) sqrt(VAR(x))
 
 #' Standardise by subtracting off expectation and dividing by sd.
-#' 
+#'
 #' This is often called the z score.
-#' 
+#'
 #' @param x a random variable
 #' @export
 #' @examples

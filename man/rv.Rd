@@ -23,5 +23,11 @@ dice <- rv(1:6)
 P(dice > 3)
 E(dice)
 P(dice > dice + 1)
+
+coin <- rv(c("H", "T"))
+# Event that you flip a head:
+coin == "H"
+# Game where you win $1 if you get a head, lose $1 if you get a tail
+rif(coin == "H", 1, -1)
 }
 

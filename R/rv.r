@@ -1,7 +1,7 @@
 #' Make a discrete random variable.
-#' 
+#'
 #' @param x a numeric vector giving the values of the random variable.
-#' @param probs optional, a numeric vector giving the probabilities 
+#' @param probs optional, a numeric vector giving the probabilities
 #'   corresponding to each x value. If not specific, assumes all outcomes
 #'   are equally likely
 #' @export
@@ -11,6 +11,12 @@
 #' P(dice > 3)
 #' E(dice)
 #' P(dice > dice + 1)
+#'
+#' coin <- rv(c("H", "T"))
+#' # Event that you flip a head:
+#' coin == "H"
+#' # Game where you win $1 if you get a head, lose $1 if you get a tail
+#' rif(coin == "H", 1, -1)
 rv <- function(x, probs = NULL) {
   if (is.rv(x)) x <- as.numeric(x)
   if (is.null(probs)) {
@@ -19,19 +25,19 @@ rv <- function(x, probs = NULL) {
     if (any(probs < 0)) stop("Probabilities must be positive")
     if (abs(sum(probs) - 1) > 1e-6) stop("Probabilities must sum to 1")
   }
-  
-  # Simplify by summing probabilities with equal x's. Need to use 
+
+  # Simplify by summing probabilities with equal x's. Need to use
   # addNA since otherwise tapply silently drops groups with missing values
   grp <- addNA(x, ifany = TRUE)
   x_new <- as.vector(tapply(x, grp, "[", 1))
   probs <- as.vector(tapply(probs, grp, sum))
-  
+
   # Set probs and class attributes
   structure(x_new, probs = probs, class = "rv")
 }
 
 #' Check if an object is a discrete random variable.
-#' 
+#'
 #' @export
 #' @param x object to check
 #' @examples
@@ -40,11 +46,11 @@ rv <- function(x, probs = NULL) {
 is.rv <- function(x) inherits(x, "rv")
 
 #' Coerce an object to an rv.
-#' 
-#' Currently has methods for rv objects (which leaves unchanged), and 
+#'
+#' Currently has methods for rv objects (which leaves unchanged), and
 #' for integer, numeric and logical vectors (which assume are uniformly
 #' distributed).
-#' 
+#'
 #' @export
 #' @param x An object to coerce
 #' @examples
@@ -61,6 +67,8 @@ as.rv.numeric <- function(x) rv(x)
 as.rv.integer <- function(x) rv(x)
 #' @export
 as.rv.logical <- function(x) rv(x)
+#' @export
+as.rv.character <- function(x) rv(x)
 
 
 probs <- function(x) attr(x, "probs")
@@ -103,9 +111,9 @@ sqrt.rv <- function(x) {
 plot.rv <- function(x, ...) {
   name <- deparse(substitute(x))
   ylim <- range(0, probs(x))
-  
+
   plot(as.numeric(x), probs(x), type = "h", ylim = ylim,
     xlab = name, ylab = paste0("P(", name, ")"), ...)
   points(as.numeric(x), probs(x), pch = 20)
-  abline(h = 0, col = "gray")  
+  abline(h = 0, col = "gray")
 }
