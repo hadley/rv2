@@ -34,6 +34,7 @@ git push --all --force
 You can create zipped version of these packages with:
 
 ```
+mkdir day-2
 git archive --format zip --prefix test-me/ --output ../day-2/test-me.zip test-me 
 git archive --format zip --prefix document-me/ --output ../day-2/document-me.zip document-me 
 git archive --format zip --prefix check-me/ --output ../day-2/check-me.zip check-me 
