@@ -45,7 +45,7 @@ cd ../day-2/
 unzip test-me.zip
 unzip document-me.zip
 unzip check-me.zip
-unzip complete.zip
+unzip rv2.zip
 rm *.zip
 mv test-me/rv2.Rproj test-me/test-me.Rproj
 mv document-me/rv2.Rproj document-me/document-me.Rproj
