@@ -19,6 +19,7 @@ The master branch contains a complete version of the package that passes `R CMD 
 * `test-me`: a version with fewer tests and some bugs
 * `document-me`: a version with less documentation and some problems
 * `check-me`: a version with some problems that need fixing for R CMD check.
+* `complete`: the same as this, but without these notes
 
 Commits made to these branches need to be minimal and well described in the commmit message since they will be regularly rebased from master.
 
@@ -28,6 +29,7 @@ To ensure that all branches are synced with master, run:
 git checkout test-me && git rebase master
 git checkout document-me && git rebase master
 git checkout check-me && git rebase master
+git checkout complete && git rebase master
 git push --all --force
 ```
 
@@ -38,10 +40,12 @@ mkdir day-2
 git archive --format zip --prefix test-me/ --output ../day-2/test-me.zip test-me 
 git archive --format zip --prefix document-me/ --output ../day-2/document-me.zip document-me 
 git archive --format zip --prefix check-me/ --output ../day-2/check-me.zip check-me 
+git archive --format zip --prefix rv2/ --output ../day-2/rv2.zip complete 
 cd ../day-2/
 unzip test-me.zip
 unzip document-me.zip
 unzip check-me.zip
+unzip complete.zip
 rm *.zip
 mv test-me/rv2.Rproj test-me/test-me.Rproj
 mv document-me/rv2.Rproj document-me/document-me.Rproj
