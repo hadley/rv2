@@ -1,14 +1,18 @@
-<!--
-%\VignetteEngine{knitr}
-%\VignetteIndexEntry{Exploring the central limit theorem}
--->
+---
+title: "The central limit theorem"
+author: "Hadley Wickham"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
-```{r, echo = FALSE}
-# echo = FALSE suppresses the output of this block
+```{r, include = FALSE}
+# include = FALSE suppresses the output of this block
 library(rv2)
 ```
-
-# The central limit theorem
 
 This vignette shows how we can see the central limit theorem emerge when we sum multiple discrete random variables together.
 
