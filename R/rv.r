@@ -112,8 +112,8 @@ plot.rv <- function(x, ...) {
   name <- deparse(substitute(x))
   ylim <- range(0, probs(x))
 
-  graphics::plot(as.numeric(x), probs(x), type = "h", ylim = ylim,
+  plot(as.numeric(x), probs(x), type = "h", ylim = ylim,
     xlab = name, ylab = paste0("P(", name, ")"), ...)
-  graphics::points(as.numeric(x), probs(x), pch = 20)
-  graphics::abline(h = 0, col = "gray")
+  points(as.numeric(x), probs(x), pch = 20)
+  abline(h = 0, col = "gray")
 }
