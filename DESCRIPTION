@@ -3,7 +3,7 @@ Title: Discrete random variables
 Description: A simple object system for interactive exploration of discrete
     random variables. Methods include P, E, Var, and plot. Inspired by Andreas
     Buja's code from
-    \url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}
+    \url{http://stat.wharton.upenn.edu/~buja/STAT-101/src-probability.R}.
 Version: 0.1
 Authors@R: person("Hadley", "Wickham", , "hadley@rstudio.com", c("aut", "cre"))
 Depends:
